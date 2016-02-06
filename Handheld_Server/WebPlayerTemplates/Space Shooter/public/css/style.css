@@ -1,0 +1,50 @@
+body {
+	width: 100vw;
+	height: 100vh;
+	background: black;
+}
+
+.joystick {
+	position: absolute;
+	bottom: 0;
+	width: 50vw;
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+}
+
+#movement {
+	top: 0;
+	left: 0;
+}
+
+#shooting {
+	top: 0;
+	right: 0;
+}
+
+#health {
+	font-family: "Arial Black", Gadget, sans-serif;
+	font-size: 2em;
+	color: red;
+	position: absolute;
+	width: 200px;
+	height: 100px;
+	top: 10px;
+	left: 50%;
+	margin-left: -100px;
+	text-align: center;
+}
+
+#spawn {
+	display: none;
+	font-size: 2em;
+	color: red;
+	position: absolute;
+	width: 200px;
+	height: 100px;
+	top: 10px;
+	left: 50%;
+	margin-left: -100px;
+	text-align: center;	
+}

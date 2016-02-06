@@ -1,0 +1,746 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install' ]
+2 info using npm@3.5.3
+3 info using node@v0.12.9
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly install normalizeTree
+8 silly loadCurrentTree Finishing
+9 silly loadIdealTree Starting
+10 silly install loadIdealTree
+11 silly cloneCurrentTree Starting
+12 silly install cloneCurrentTreeToIdealTree
+13 silly cloneCurrentTree Finishing
+14 silly loadShrinkwrap Starting
+15 silly install loadShrinkwrap
+16 silly loadShrinkwrap Finishing
+17 silly loadAllDepsIntoIdealTree Starting
+18 silly install loadAllDepsIntoIdealTree
+19 silly loadAllDepsIntoIdealTree Finishing
+20 silly idealTree:prePrune prototype@1.0.0
+20 silly idealTree:prePrune ├── ejs.meta
+20 silly idealTree:prePrune ├── ejs@2.4.1
+20 silly idealTree:prePrune ├── express.meta
+20 silly idealTree:prePrune ├─┬ express@4.13.4
+20 silly idealTree:prePrune │ ├── accepts.meta
+20 silly idealTree:prePrune │ ├─┬ accepts@1.2.13
+20 silly idealTree:prePrune │ │ ├── mime-types.meta
+20 silly idealTree:prePrune │ │ ├─┬ mime-types@2.1.9
+20 silly idealTree:prePrune │ │ │ ├── mime-db.meta
+20 silly idealTree:prePrune │ │ │ └── mime-db@1.21.0
+20 silly idealTree:prePrune │ │ ├── negotiator.meta
+20 silly idealTree:prePrune │ │ └── negotiator@0.5.3
+20 silly idealTree:prePrune │ ├── array-flatten.meta
+20 silly idealTree:prePrune │ ├── array-flatten@1.1.1
+20 silly idealTree:prePrune │ ├── content-disposition.meta
+20 silly idealTree:prePrune │ ├── content-disposition@0.5.1
+20 silly idealTree:prePrune │ ├── content-type.meta
+20 silly idealTree:prePrune │ ├── content-type@1.0.1
+20 silly idealTree:prePrune │ ├── cookie-signature.meta
+20 silly idealTree:prePrune │ ├── cookie-signature@1.0.6
+20 silly idealTree:prePrune │ ├── cookie.meta
+20 silly idealTree:prePrune │ ├── cookie@0.1.5
+20 silly idealTree:prePrune │ ├── debug.meta
+20 silly idealTree:prePrune │ ├─┬ debug@2.2.0
+20 silly idealTree:prePrune │ │ ├── ms.meta
+20 silly idealTree:prePrune │ │ └── ms@0.7.1
+20 silly idealTree:prePrune │ ├── depd.meta
+20 silly idealTree:prePrune │ ├── depd@1.1.0
+20 silly idealTree:prePrune │ ├── escape-html.meta
+20 silly idealTree:prePrune │ ├── escape-html@1.0.3
+20 silly idealTree:prePrune │ ├── etag.meta
+20 silly idealTree:prePrune │ ├── etag@1.7.0
+20 silly idealTree:prePrune │ ├── finalhandler.meta
+20 silly idealTree:prePrune │ ├─┬ finalhandler@0.4.1
+20 silly idealTree:prePrune │ │ ├── unpipe.meta
+20 silly idealTree:prePrune │ │ └── unpipe@1.0.0
+20 silly idealTree:prePrune │ ├── fresh.meta
+20 silly idealTree:prePrune │ ├── fresh@0.3.0
+20 silly idealTree:prePrune │ ├── merge-descriptors.meta
+20 silly idealTree:prePrune │ ├── merge-descriptors@1.0.1
+20 silly idealTree:prePrune │ ├── methods.meta
+20 silly idealTree:prePrune │ ├── methods@1.1.2
+20 silly idealTree:prePrune │ ├── on-finished.meta
+20 silly idealTree:prePrune │ ├─┬ on-finished@2.3.0
+20 silly idealTree:prePrune │ │ ├── ee-first.meta
+20 silly idealTree:prePrune │ │ └── ee-first@1.1.1
+20 silly idealTree:prePrune │ ├── parseurl.meta
+20 silly idealTree:prePrune │ ├── parseurl@1.3.1
+20 silly idealTree:prePrune │ ├── path-to-regexp.meta
+20 silly idealTree:prePrune │ ├── path-to-regexp@0.1.7
+20 silly idealTree:prePrune │ ├── proxy-addr.meta
+20 silly idealTree:prePrune │ ├─┬ proxy-addr@1.0.10
+20 silly idealTree:prePrune │ │ ├── forwarded.meta
+20 silly idealTree:prePrune │ │ ├── forwarded@0.1.0
+20 silly idealTree:prePrune │ │ ├── ipaddr.js.meta
+20 silly idealTree:prePrune │ │ └── ipaddr.js@1.0.5
+20 silly idealTree:prePrune │ ├── qs.meta
+20 silly idealTree:prePrune │ ├── qs@4.0.0
+20 silly idealTree:prePrune │ ├── range-parser.meta
+20 silly idealTree:prePrune │ ├── range-parser@1.0.3
+20 silly idealTree:prePrune │ ├── send.meta
+20 silly idealTree:prePrune │ ├─┬ send@0.13.1
+20 silly idealTree:prePrune │ │ ├── destroy.meta
+20 silly idealTree:prePrune │ │ ├── destroy@1.0.4
+20 silly idealTree:prePrune │ │ ├── http-errors.meta
+20 silly idealTree:prePrune │ │ ├─┬ http-errors@1.3.1
+20 silly idealTree:prePrune │ │ │ ├── inherits.meta
+20 silly idealTree:prePrune │ │ │ └── inherits@2.0.1
+20 silly idealTree:prePrune │ │ ├── mime.meta
+20 silly idealTree:prePrune │ │ ├── mime@1.3.4
+20 silly idealTree:prePrune │ │ ├── ms.meta
+20 silly idealTree:prePrune │ │ ├── ms@0.7.1
+20 silly idealTree:prePrune │ │ ├── statuses.meta
+20 silly idealTree:prePrune │ │ └── statuses@1.2.1
+20 silly idealTree:prePrune │ ├── serve-static.meta
+20 silly idealTree:prePrune │ ├── serve-static@1.10.2
+20 silly idealTree:prePrune │ ├── type-is.meta
+20 silly idealTree:prePrune │ ├─┬ type-is@1.6.11
+20 silly idealTree:prePrune │ │ ├── media-typer.meta
+20 silly idealTree:prePrune │ │ ├── media-typer@0.3.0
+20 silly idealTree:prePrune │ │ ├── mime-types.meta
+20 silly idealTree:prePrune │ │ └─┬ mime-types@2.1.9
+20 silly idealTree:prePrune │ │   ├── mime-db.meta
+20 silly idealTree:prePrune │ │   └── mime-db@1.21.0
+20 silly idealTree:prePrune │ ├── utils-merge.meta
+20 silly idealTree:prePrune │ ├── utils-merge@1.0.0
+20 silly idealTree:prePrune │ ├── vary.meta
+20 silly idealTree:prePrune │ └── vary@1.0.1
+20 silly idealTree:prePrune ├── ip.meta
+20 silly idealTree:prePrune ├── ip@0.3.3
+20 silly idealTree:prePrune ├── log-timestamp.meta
+20 silly idealTree:prePrune ├─┬ log-timestamp@0.1.2
+20 silly idealTree:prePrune │ ├── log-prefix.meta
+20 silly idealTree:prePrune │ └── log-prefix@0.0.0
+20 silly idealTree:prePrune ├── socket.io.meta
+20 silly idealTree:prePrune └─┬ socket.io@1.4.5
+20 silly idealTree:prePrune   ├── debug.meta
+20 silly idealTree:prePrune   ├─┬ debug@2.2.0
+20 silly idealTree:prePrune   │ ├── ms.meta
+20 silly idealTree:prePrune   │ └── ms@0.7.1
+20 silly idealTree:prePrune   ├── engine.io.meta
+20 silly idealTree:prePrune   ├─┬ engine.io@1.6.8
+20 silly idealTree:prePrune   │ ├── accepts.meta
+20 silly idealTree:prePrune   │ ├─┬ accepts@1.1.4
+20 silly idealTree:prePrune   │ │ ├── mime-types.meta
+20 silly idealTree:prePrune   │ │ ├─┬ mime-types@2.0.14
+20 silly idealTree:prePrune   │ │ │ ├── mime-db.meta
+20 silly idealTree:prePrune   │ │ │ └── mime-db@1.12.0
+20 silly idealTree:prePrune   │ │ ├── negotiator.meta
+20 silly idealTree:prePrune   │ │ └── negotiator@0.4.9
+20 silly idealTree:prePrune   │ ├── base64id.meta
+20 silly idealTree:prePrune   │ ├── base64id@0.1.0
+20 silly idealTree:prePrune   │ ├── engine.io-parser.meta
+20 silly idealTree:prePrune   │ ├─┬ engine.io-parser@1.2.4
+20 silly idealTree:prePrune   │ │ ├── after.meta
+20 silly idealTree:prePrune   │ │ ├── after@0.8.1
+20 silly idealTree:prePrune   │ │ ├── arraybuffer.slice.meta
+20 silly idealTree:prePrune   │ │ ├── arraybuffer.slice@0.0.6
+20 silly idealTree:prePrune   │ │ ├── base64-arraybuffer.meta
+20 silly idealTree:prePrune   │ │ ├── base64-arraybuffer@0.1.2
+20 silly idealTree:prePrune   │ │ ├── blob.meta
+20 silly idealTree:prePrune   │ │ ├── blob@0.0.4
+20 silly idealTree:prePrune   │ │ ├── has-binary.meta
+20 silly idealTree:prePrune   │ │ ├─┬ has-binary@0.1.6
+20 silly idealTree:prePrune   │ │ │ ├── isarray.meta
+20 silly idealTree:prePrune   │ │ │ └── isarray@0.0.1
+20 silly idealTree:prePrune   │ │ ├── utf8.meta
+20 silly idealTree:prePrune   │ │ └── utf8@2.1.0
+20 silly idealTree:prePrune   │ ├── ws.meta
+20 silly idealTree:prePrune   │ └─┬ ws@1.0.1
+20 silly idealTree:prePrune   │   ├── options.meta
+20 silly idealTree:prePrune   │   ├── options@0.0.6
+20 silly idealTree:prePrune   │   ├── ultron.meta
+20 silly idealTree:prePrune   │   └── ultron@1.0.2
+20 silly idealTree:prePrune   ├── has-binary.meta
+20 silly idealTree:prePrune   ├─┬ has-binary@0.1.7
+20 silly idealTree:prePrune   │ ├── isarray.meta
+20 silly idealTree:prePrune   │ └── isarray@0.0.1
+20 silly idealTree:prePrune   ├── socket.io-adapter.meta
+20 silly idealTree:prePrune   ├─┬ socket.io-adapter@0.4.0
+20 silly idealTree:prePrune   │ ├── socket.io-parser.meta
+20 silly idealTree:prePrune   │ └─┬ socket.io-parser@2.2.2
+20 silly idealTree:prePrune   │   ├── benchmark.meta
+20 silly idealTree:prePrune   │   ├── benchmark@1.0.0
+20 silly idealTree:prePrune   │   ├── component-emitter.meta
+20 silly idealTree:prePrune   │   ├── component-emitter@1.1.2
+20 silly idealTree:prePrune   │   ├── debug.meta
+20 silly idealTree:prePrune   │   ├── debug@0.7.4
+20 silly idealTree:prePrune   │   ├── isarray.meta
+20 silly idealTree:prePrune   │   ├── isarray@0.0.1
+20 silly idealTree:prePrune   │   ├── json3.meta
+20 silly idealTree:prePrune   │   └── json3@3.2.6
+20 silly idealTree:prePrune   ├── socket.io-client.meta
+20 silly idealTree:prePrune   ├─┬ socket.io-client@1.4.5
+20 silly idealTree:prePrune   │ ├── backo2.meta
+20 silly idealTree:prePrune   │ ├── backo2@1.0.2
+20 silly idealTree:prePrune   │ ├── component-bind.meta
+20 silly idealTree:prePrune   │ ├── component-bind@1.0.0
+20 silly idealTree:prePrune   │ ├── component-emitter.meta
+20 silly idealTree:prePrune   │ ├── component-emitter@1.2.0
+20 silly idealTree:prePrune   │ ├── engine.io-client.meta
+20 silly idealTree:prePrune   │ ├─┬ engine.io-client@1.6.8
+20 silly idealTree:prePrune   │ │ ├── component-emitter.meta
+20 silly idealTree:prePrune   │ │ ├── component-emitter@1.1.2
+20 silly idealTree:prePrune   │ │ ├── component-inherit.meta
+20 silly idealTree:prePrune   │ │ ├── component-inherit@0.0.3
+20 silly idealTree:prePrune   │ │ ├── engine.io-parser.meta
+20 silly idealTree:prePrune   │ │ ├─┬ engine.io-parser@1.2.4
+20 silly idealTree:prePrune   │ │ │ ├── after.meta
+20 silly idealTree:prePrune   │ │ │ ├── after@0.8.1
+20 silly idealTree:prePrune   │ │ │ ├── arraybuffer.slice.meta
+20 silly idealTree:prePrune   │ │ │ ├── arraybuffer.slice@0.0.6
+20 silly idealTree:prePrune   │ │ │ ├── base64-arraybuffer.meta
+20 silly idealTree:prePrune   │ │ │ ├── base64-arraybuffer@0.1.2
+20 silly idealTree:prePrune   │ │ │ ├── blob.meta
+20 silly idealTree:prePrune   │ │ │ ├── blob@0.0.4
+20 silly idealTree:prePrune   │ │ │ ├── has-binary.meta
+20 silly idealTree:prePrune   │ │ │ ├─┬ has-binary@0.1.6
+20 silly idealTree:prePrune   │ │ │ │ ├── isarray.meta
+20 silly idealTree:prePrune   │ │ │ │ └── isarray@0.0.1
+20 silly idealTree:prePrune   │ │ │ ├── utf8.meta
+20 silly idealTree:prePrune   │ │ │ └── utf8@2.1.0
+20 silly idealTree:prePrune   │ │ ├── has-cors.meta
+20 silly idealTree:prePrune   │ │ ├── has-cors@1.1.0
+20 silly idealTree:prePrune   │ │ ├── parsejson.meta
+20 silly idealTree:prePrune   │ │ ├─┬ parsejson@0.0.1
+20 silly idealTree:prePrune   │ │ │ ├── better-assert.meta
+20 silly idealTree:prePrune   │ │ │ └─┬ better-assert@1.0.2
+20 silly idealTree:prePrune   │ │ │   ├── callsite.meta
+20 silly idealTree:prePrune   │ │ │   └── callsite@1.0.0
+20 silly idealTree:prePrune   │ │ ├── parseqs.meta
+20 silly idealTree:prePrune   │ │ ├─┬ parseqs@0.0.2
+20 silly idealTree:prePrune   │ │ │ ├── better-assert.meta
+20 silly idealTree:prePrune   │ │ │ └─┬ better-assert@1.0.2
+20 silly idealTree:prePrune   │ │ │   ├── callsite.meta
+20 silly idealTree:prePrune   │ │ │   └── callsite@1.0.0
+20 silly idealTree:prePrune   │ │ ├── ws.meta
+20 silly idealTree:prePrune   │ │ ├─┬ ws@1.0.1
+20 silly idealTree:prePrune   │ │ │ ├── options.meta
+20 silly idealTree:prePrune   │ │ │ ├── options@0.0.6
+20 silly idealTree:prePrune   │ │ │ ├── ultron.meta
+20 silly idealTree:prePrune   │ │ │ └── ultron@1.0.2
+20 silly idealTree:prePrune   │ │ ├── xmlhttprequest-ssl.meta
+20 silly idealTree:prePrune   │ │ ├── xmlhttprequest-ssl@1.5.1
+20 silly idealTree:prePrune   │ │ ├── yeast.meta
+20 silly idealTree:prePrune   │ │ └── yeast@0.1.2
+20 silly idealTree:prePrune   │ ├── indexof.meta
+20 silly idealTree:prePrune   │ ├── indexof@0.0.1
+20 silly idealTree:prePrune   │ ├── object-component.meta
+20 silly idealTree:prePrune   │ ├── object-component@0.0.3
+20 silly idealTree:prePrune   │ ├── parseuri.meta
+20 silly idealTree:prePrune   │ ├─┬ parseuri@0.0.4
+20 silly idealTree:prePrune   │ │ ├── better-assert.meta
+20 silly idealTree:prePrune   │ │ └─┬ better-assert@1.0.2
+20 silly idealTree:prePrune   │ │   ├── callsite.meta
+20 silly idealTree:prePrune   │ │   └── callsite@1.0.0
+20 silly idealTree:prePrune   │ ├── to-array.meta
+20 silly idealTree:prePrune   │ └── to-array@0.1.4
+20 silly idealTree:prePrune   ├── socket.io-parser.meta
+20 silly idealTree:prePrune   └─┬ socket.io-parser@2.2.6
+20 silly idealTree:prePrune     ├── benchmark.meta
+20 silly idealTree:prePrune     ├── benchmark@1.0.0
+20 silly idealTree:prePrune     ├── component-emitter.meta
+20 silly idealTree:prePrune     ├── component-emitter@1.1.2
+20 silly idealTree:prePrune     ├── isarray.meta
+20 silly idealTree:prePrune     ├── isarray@0.0.1
+20 silly idealTree:prePrune     ├── json3.meta
+20 silly idealTree:prePrune     └── json3@3.3.2
+21 silly loadIdealTree Finishing
+22 silly currentTree prototype@1.0.0
+22 silly currentTree ├── ejs.meta
+22 silly currentTree ├── ejs@2.4.1
+22 silly currentTree ├── express.meta
+22 silly currentTree ├─┬ express@4.13.4
+22 silly currentTree │ ├── accepts.meta
+22 silly currentTree │ ├─┬ accepts@1.2.13
+22 silly currentTree │ │ ├── mime-types.meta
+22 silly currentTree │ │ ├─┬ mime-types@2.1.9
+22 silly currentTree │ │ │ ├── mime-db.meta
+22 silly currentTree │ │ │ └── mime-db@1.21.0
+22 silly currentTree │ │ ├── negotiator.meta
+22 silly currentTree │ │ └── negotiator@0.5.3
+22 silly currentTree │ ├── array-flatten.meta
+22 silly currentTree │ ├── array-flatten@1.1.1
+22 silly currentTree │ ├── content-disposition.meta
+22 silly currentTree │ ├── content-disposition@0.5.1
+22 silly currentTree │ ├── content-type.meta
+22 silly currentTree │ ├── content-type@1.0.1
+22 silly currentTree │ ├── cookie-signature.meta
+22 silly currentTree │ ├── cookie-signature@1.0.6
+22 silly currentTree │ ├── cookie.meta
+22 silly currentTree │ ├── cookie@0.1.5
+22 silly currentTree │ ├── debug.meta
+22 silly currentTree │ ├─┬ debug@2.2.0
+22 silly currentTree │ │ ├── ms.meta
+22 silly currentTree │ │ └── ms@0.7.1
+22 silly currentTree │ ├── depd.meta
+22 silly currentTree │ ├── depd@1.1.0
+22 silly currentTree │ ├── escape-html.meta
+22 silly currentTree │ ├── escape-html@1.0.3
+22 silly currentTree │ ├── etag.meta
+22 silly currentTree │ ├── etag@1.7.0
+22 silly currentTree │ ├── finalhandler.meta
+22 silly currentTree │ ├─┬ finalhandler@0.4.1
+22 silly currentTree │ │ ├── unpipe.meta
+22 silly currentTree │ │ └── unpipe@1.0.0
+22 silly currentTree │ ├── fresh.meta
+22 silly currentTree │ ├── fresh@0.3.0
+22 silly currentTree │ ├── merge-descriptors.meta
+22 silly currentTree │ ├── merge-descriptors@1.0.1
+22 silly currentTree │ ├── methods.meta
+22 silly currentTree │ ├── methods@1.1.2
+22 silly currentTree │ ├── on-finished.meta
+22 silly currentTree │ ├─┬ on-finished@2.3.0
+22 silly currentTree │ │ ├── ee-first.meta
+22 silly currentTree │ │ └── ee-first@1.1.1
+22 silly currentTree │ ├── parseurl.meta
+22 silly currentTree │ ├── parseurl@1.3.1
+22 silly currentTree │ ├── path-to-regexp.meta
+22 silly currentTree │ ├── path-to-regexp@0.1.7
+22 silly currentTree │ ├── proxy-addr.meta
+22 silly currentTree │ ├─┬ proxy-addr@1.0.10
+22 silly currentTree │ │ ├── forwarded.meta
+22 silly currentTree │ │ ├── forwarded@0.1.0
+22 silly currentTree │ │ ├── ipaddr.js.meta
+22 silly currentTree │ │ └── ipaddr.js@1.0.5
+22 silly currentTree │ ├── qs.meta
+22 silly currentTree │ ├── qs@4.0.0
+22 silly currentTree │ ├── range-parser.meta
+22 silly currentTree │ ├── range-parser@1.0.3
+22 silly currentTree │ ├── send.meta
+22 silly currentTree │ ├─┬ send@0.13.1
+22 silly currentTree │ │ ├── destroy.meta
+22 silly currentTree │ │ ├── destroy@1.0.4
+22 silly currentTree │ │ ├── http-errors.meta
+22 silly currentTree │ │ ├─┬ http-errors@1.3.1
+22 silly currentTree │ │ │ ├── inherits.meta
+22 silly currentTree │ │ │ └── inherits@2.0.1
+22 silly currentTree │ │ ├── mime.meta
+22 silly currentTree │ │ ├── mime@1.3.4
+22 silly currentTree │ │ ├── ms.meta
+22 silly currentTree │ │ ├── ms@0.7.1
+22 silly currentTree │ │ ├── statuses.meta
+22 silly currentTree │ │ └── statuses@1.2.1
+22 silly currentTree │ ├── serve-static.meta
+22 silly currentTree │ ├── serve-static@1.10.2
+22 silly currentTree │ ├── type-is.meta
+22 silly currentTree │ ├─┬ type-is@1.6.11
+22 silly currentTree │ │ ├── media-typer.meta
+22 silly currentTree │ │ ├── media-typer@0.3.0
+22 silly currentTree │ │ ├── mime-types.meta
+22 silly currentTree │ │ └─┬ mime-types@2.1.9
+22 silly currentTree │ │   ├── mime-db.meta
+22 silly currentTree │ │   └── mime-db@1.21.0
+22 silly currentTree │ ├── utils-merge.meta
+22 silly currentTree │ ├── utils-merge@1.0.0
+22 silly currentTree │ ├── vary.meta
+22 silly currentTree │ └── vary@1.0.1
+22 silly currentTree ├── ip.meta
+22 silly currentTree ├── ip@0.3.3
+22 silly currentTree ├── log-timestamp.meta
+22 silly currentTree ├─┬ log-timestamp@0.1.2
+22 silly currentTree │ ├── log-prefix.meta
+22 silly currentTree │ └── log-prefix@0.0.0
+22 silly currentTree ├── socket.io.meta
+22 silly currentTree └─┬ socket.io@1.4.5
+22 silly currentTree   ├── debug.meta
+22 silly currentTree   ├─┬ debug@2.2.0
+22 silly currentTree   │ ├── ms.meta
+22 silly currentTree   │ └── ms@0.7.1
+22 silly currentTree   ├── engine.io.meta
+22 silly currentTree   ├─┬ engine.io@1.6.8
+22 silly currentTree   │ ├── accepts.meta
+22 silly currentTree   │ ├─┬ accepts@1.1.4
+22 silly currentTree   │ │ ├── mime-types.meta
+22 silly currentTree   │ │ ├─┬ mime-types@2.0.14
+22 silly currentTree   │ │ │ ├── mime-db.meta
+22 silly currentTree   │ │ │ └── mime-db@1.12.0
+22 silly currentTree   │ │ ├── negotiator.meta
+22 silly currentTree   │ │ └── negotiator@0.4.9
+22 silly currentTree   │ ├── base64id.meta
+22 silly currentTree   │ ├── base64id@0.1.0
+22 silly currentTree   │ ├── engine.io-parser.meta
+22 silly currentTree   │ ├─┬ engine.io-parser@1.2.4
+22 silly currentTree   │ │ ├── after.meta
+22 silly currentTree   │ │ ├── after@0.8.1
+22 silly currentTree   │ │ ├── arraybuffer.slice.meta
+22 silly currentTree   │ │ ├── arraybuffer.slice@0.0.6
+22 silly currentTree   │ │ ├── base64-arraybuffer.meta
+22 silly currentTree   │ │ ├── base64-arraybuffer@0.1.2
+22 silly currentTree   │ │ ├── blob.meta
+22 silly currentTree   │ │ ├── blob@0.0.4
+22 silly currentTree   │ │ ├── has-binary.meta
+22 silly currentTree   │ │ ├─┬ has-binary@0.1.6
+22 silly currentTree   │ │ │ ├── isarray.meta
+22 silly currentTree   │ │ │ └── isarray@0.0.1
+22 silly currentTree   │ │ ├── utf8.meta
+22 silly currentTree   │ │ └── utf8@2.1.0
+22 silly currentTree   │ ├── ws.meta
+22 silly currentTree   │ └─┬ ws@1.0.1
+22 silly currentTree   │   ├── options.meta
+22 silly currentTree   │   ├── options@0.0.6
+22 silly currentTree   │   ├── ultron.meta
+22 silly currentTree   │   └── ultron@1.0.2
+22 silly currentTree   ├── has-binary.meta
+22 silly currentTree   ├─┬ has-binary@0.1.7
+22 silly currentTree   │ ├── isarray.meta
+22 silly currentTree   │ └── isarray@0.0.1
+22 silly currentTree   ├── socket.io-adapter.meta
+22 silly currentTree   ├─┬ socket.io-adapter@0.4.0
+22 silly currentTree   │ ├── socket.io-parser.meta
+22 silly currentTree   │ └─┬ socket.io-parser@2.2.2
+22 silly currentTree   │   ├── benchmark.meta
+22 silly currentTree   │   ├── benchmark@1.0.0
+22 silly currentTree   │   ├── component-emitter.meta
+22 silly currentTree   │   ├── component-emitter@1.1.2
+22 silly currentTree   │   ├── debug.meta
+22 silly currentTree   │   ├── debug@0.7.4
+22 silly currentTree   │   ├── isarray.meta
+22 silly currentTree   │   ├── isarray@0.0.1
+22 silly currentTree   │   ├── json3.meta
+22 silly currentTree   │   └── json3@3.2.6
+22 silly currentTree   ├── socket.io-client.meta
+22 silly currentTree   ├─┬ socket.io-client@1.4.5
+22 silly currentTree   │ ├── backo2.meta
+22 silly currentTree   │ ├── backo2@1.0.2
+22 silly currentTree   │ ├── component-bind.meta
+22 silly currentTree   │ ├── component-bind@1.0.0
+22 silly currentTree   │ ├── component-emitter.meta
+22 silly currentTree   │ ├── component-emitter@1.2.0
+22 silly currentTree   │ ├── engine.io-client.meta
+22 silly currentTree   │ ├─┬ engine.io-client@1.6.8
+22 silly currentTree   │ │ ├── component-emitter.meta
+22 silly currentTree   │ │ ├── component-emitter@1.1.2
+22 silly currentTree   │ │ ├── component-inherit.meta
+22 silly currentTree   │ │ ├── component-inherit@0.0.3
+22 silly currentTree   │ │ ├── engine.io-parser.meta
+22 silly currentTree   │ │ ├─┬ engine.io-parser@1.2.4
+22 silly currentTree   │ │ │ ├── after.meta
+22 silly currentTree   │ │ │ ├── after@0.8.1
+22 silly currentTree   │ │ │ ├── arraybuffer.slice.meta
+22 silly currentTree   │ │ │ ├── arraybuffer.slice@0.0.6
+22 silly currentTree   │ │ │ ├── base64-arraybuffer.meta
+22 silly currentTree   │ │ │ ├── base64-arraybuffer@0.1.2
+22 silly currentTree   │ │ │ ├── blob.meta
+22 silly currentTree   │ │ │ ├── blob@0.0.4
+22 silly currentTree   │ │ │ ├── has-binary.meta
+22 silly currentTree   │ │ │ ├─┬ has-binary@0.1.6
+22 silly currentTree   │ │ │ │ ├── isarray.meta
+22 silly currentTree   │ │ │ │ └── isarray@0.0.1
+22 silly currentTree   │ │ │ ├── utf8.meta
+22 silly currentTree   │ │ │ └── utf8@2.1.0
+22 silly currentTree   │ │ ├── has-cors.meta
+22 silly currentTree   │ │ ├── has-cors@1.1.0
+22 silly currentTree   │ │ ├── parsejson.meta
+22 silly currentTree   │ │ ├─┬ parsejson@0.0.1
+22 silly currentTree   │ │ │ ├── better-assert.meta
+22 silly currentTree   │ │ │ └─┬ better-assert@1.0.2
+22 silly currentTree   │ │ │   ├── callsite.meta
+22 silly currentTree   │ │ │   └── callsite@1.0.0
+22 silly currentTree   │ │ ├── parseqs.meta
+22 silly currentTree   │ │ ├─┬ parseqs@0.0.2
+22 silly currentTree   │ │ │ ├── better-assert.meta
+22 silly currentTree   │ │ │ └─┬ better-assert@1.0.2
+22 silly currentTree   │ │ │   ├── callsite.meta
+22 silly currentTree   │ │ │   └── callsite@1.0.0
+22 silly currentTree   │ │ ├── ws.meta
+22 silly currentTree   │ │ ├─┬ ws@1.0.1
+22 silly currentTree   │ │ │ ├── options.meta
+22 silly currentTree   │ │ │ ├── options@0.0.6
+22 silly currentTree   │ │ │ ├── ultron.meta
+22 silly currentTree   │ │ │ └── ultron@1.0.2
+22 silly currentTree   │ │ ├── xmlhttprequest-ssl.meta
+22 silly currentTree   │ │ ├── xmlhttprequest-ssl@1.5.1
+22 silly currentTree   │ │ ├── yeast.meta
+22 silly currentTree   │ │ └── yeast@0.1.2
+22 silly currentTree   │ ├── indexof.meta
+22 silly currentTree   │ ├── indexof@0.0.1
+22 silly currentTree   │ ├── object-component.meta
+22 silly currentTree   │ ├── object-component@0.0.3
+22 silly currentTree   │ ├── parseuri.meta
+22 silly currentTree   │ ├─┬ parseuri@0.0.4
+22 silly currentTree   │ │ ├── better-assert.meta
+22 silly currentTree   │ │ └─┬ better-assert@1.0.2
+22 silly currentTree   │ │   ├── callsite.meta
+22 silly currentTree   │ │   └── callsite@1.0.0
+22 silly currentTree   │ ├── to-array.meta
+22 silly currentTree   │ └── to-array@0.1.4
+22 silly currentTree   ├── socket.io-parser.meta
+22 silly currentTree   └─┬ socket.io-parser@2.2.6
+22 silly currentTree     ├── benchmark.meta
+22 silly currentTree     ├── benchmark@1.0.0
+22 silly currentTree     ├── component-emitter.meta
+22 silly currentTree     ├── component-emitter@1.1.2
+22 silly currentTree     ├── isarray.meta
+22 silly currentTree     ├── isarray@0.0.1
+22 silly currentTree     ├── json3.meta
+22 silly currentTree     └── json3@3.3.2
+23 silly idealTree prototype@1.0.0
+23 silly idealTree ├── ejs.meta
+23 silly idealTree ├── ejs@2.4.1
+23 silly idealTree ├── express.meta
+23 silly idealTree ├─┬ express@4.13.4
+23 silly idealTree │ ├─┬ accepts@1.2.13
+23 silly idealTree │ │ ├─┬ mime-types@2.1.9
+23 silly idealTree │ │ │ └── mime-db@1.21.0
+23 silly idealTree │ │ └── negotiator@0.5.3
+23 silly idealTree │ ├── array-flatten@1.1.1
+23 silly idealTree │ ├── content-disposition@0.5.1
+23 silly idealTree │ ├── content-type@1.0.1
+23 silly idealTree │ ├── cookie-signature@1.0.6
+23 silly idealTree │ ├── cookie@0.1.5
+23 silly idealTree │ ├─┬ debug@2.2.0
+23 silly idealTree │ │ └── ms@0.7.1
+23 silly idealTree │ ├── depd@1.1.0
+23 silly idealTree │ ├── escape-html@1.0.3
+23 silly idealTree │ ├── etag@1.7.0
+23 silly idealTree │ ├─┬ finalhandler@0.4.1
+23 silly idealTree │ │ └── unpipe@1.0.0
+23 silly idealTree │ ├── fresh@0.3.0
+23 silly idealTree │ ├── merge-descriptors@1.0.1
+23 silly idealTree │ ├── methods@1.1.2
+23 silly idealTree │ ├─┬ on-finished@2.3.0
+23 silly idealTree │ │ └── ee-first@1.1.1
+23 silly idealTree │ ├── parseurl@1.3.1
+23 silly idealTree │ ├── path-to-regexp@0.1.7
+23 silly idealTree │ ├─┬ proxy-addr@1.0.10
+23 silly idealTree │ │ ├── forwarded@0.1.0
+23 silly idealTree │ │ └── ipaddr.js@1.0.5
+23 silly idealTree │ ├── qs@4.0.0
+23 silly idealTree │ ├── range-parser@1.0.3
+23 silly idealTree │ ├─┬ send@0.13.1
+23 silly idealTree │ │ ├── destroy@1.0.4
+23 silly idealTree │ │ ├─┬ http-errors@1.3.1
+23 silly idealTree │ │ │ └── inherits@2.0.1
+23 silly idealTree │ │ ├── mime@1.3.4
+23 silly idealTree │ │ ├── ms@0.7.1
+23 silly idealTree │ │ └── statuses@1.2.1
+23 silly idealTree │ ├── serve-static@1.10.2
+23 silly idealTree │ ├─┬ type-is@1.6.11
+23 silly idealTree │ │ ├── media-typer@0.3.0
+23 silly idealTree │ │ └─┬ mime-types@2.1.9
+23 silly idealTree │ │   └── mime-db@1.21.0
+23 silly idealTree │ ├── utils-merge@1.0.0
+23 silly idealTree │ └── vary@1.0.1
+23 silly idealTree ├── ip.meta
+23 silly idealTree ├── ip@0.3.3
+23 silly idealTree ├── log-timestamp.meta
+23 silly idealTree ├─┬ log-timestamp@0.1.2
+23 silly idealTree │ └── log-prefix@0.0.0
+23 silly idealTree ├── socket.io.meta
+23 silly idealTree └─┬ socket.io@1.4.5
+23 silly idealTree   ├─┬ debug@2.2.0
+23 silly idealTree   │ └── ms@0.7.1
+23 silly idealTree   ├─┬ engine.io@1.6.8
+23 silly idealTree   │ ├─┬ accepts@1.1.4
+23 silly idealTree   │ │ ├─┬ mime-types@2.0.14
+23 silly idealTree   │ │ │ └── mime-db@1.12.0
+23 silly idealTree   │ │ └── negotiator@0.4.9
+23 silly idealTree   │ ├── base64id@0.1.0
+23 silly idealTree   │ ├─┬ engine.io-parser@1.2.4
+23 silly idealTree   │ │ ├── after@0.8.1
+23 silly idealTree   │ │ ├── arraybuffer.slice@0.0.6
+23 silly idealTree   │ │ ├── base64-arraybuffer@0.1.2
+23 silly idealTree   │ │ ├── blob@0.0.4
+23 silly idealTree   │ │ ├─┬ has-binary@0.1.6
+23 silly idealTree   │ │ │ └── isarray@0.0.1
+23 silly idealTree   │ │ └── utf8@2.1.0
+23 silly idealTree   │ └─┬ ws@1.0.1
+23 silly idealTree   │   ├── options@0.0.6
+23 silly idealTree   │   └── ultron@1.0.2
+23 silly idealTree   ├─┬ has-binary@0.1.7
+23 silly idealTree   │ └── isarray@0.0.1
+23 silly idealTree   ├─┬ socket.io-adapter@0.4.0
+23 silly idealTree   │ └─┬ socket.io-parser@2.2.2
+23 silly idealTree   │   ├── benchmark@1.0.0
+23 silly idealTree   │   ├── component-emitter@1.1.2
+23 silly idealTree   │   ├── debug@0.7.4
+23 silly idealTree   │   ├── isarray@0.0.1
+23 silly idealTree   │   └── json3@3.2.6
+23 silly idealTree   ├─┬ socket.io-client@1.4.5
+23 silly idealTree   │ ├── backo2@1.0.2
+23 silly idealTree   │ ├── component-bind@1.0.0
+23 silly idealTree   │ ├── component-emitter@1.2.0
+23 silly idealTree   │ ├─┬ engine.io-client@1.6.8
+23 silly idealTree   │ │ ├── component-emitter@1.1.2
+23 silly idealTree   │ │ ├── component-inherit@0.0.3
+23 silly idealTree   │ │ ├─┬ engine.io-parser@1.2.4
+23 silly idealTree   │ │ │ ├── after@0.8.1
+23 silly idealTree   │ │ │ ├── arraybuffer.slice@0.0.6
+23 silly idealTree   │ │ │ ├── base64-arraybuffer@0.1.2
+23 silly idealTree   │ │ │ ├── blob@0.0.4
+23 silly idealTree   │ │ │ ├─┬ has-binary@0.1.6
+23 silly idealTree   │ │ │ │ └── isarray@0.0.1
+23 silly idealTree   │ │ │ └── utf8@2.1.0
+23 silly idealTree   │ │ ├── has-cors@1.1.0
+23 silly idealTree   │ │ ├─┬ parsejson@0.0.1
+23 silly idealTree   │ │ │ └─┬ better-assert@1.0.2
+23 silly idealTree   │ │ │   └── callsite@1.0.0
+23 silly idealTree   │ │ ├─┬ parseqs@0.0.2
+23 silly idealTree   │ │ │ └─┬ better-assert@1.0.2
+23 silly idealTree   │ │ │   └── callsite@1.0.0
+23 silly idealTree   │ │ ├─┬ ws@1.0.1
+23 silly idealTree   │ │ │ ├── options@0.0.6
+23 silly idealTree   │ │ │ └── ultron@1.0.2
+23 silly idealTree   │ │ ├── xmlhttprequest-ssl@1.5.1
+23 silly idealTree   │ │ └── yeast@0.1.2
+23 silly idealTree   │ ├── indexof@0.0.1
+23 silly idealTree   │ ├── object-component@0.0.3
+23 silly idealTree   │ ├─┬ parseuri@0.0.4
+23 silly idealTree   │ │ └─┬ better-assert@1.0.2
+23 silly idealTree   │ │   └── callsite@1.0.0
+23 silly idealTree   │ └── to-array@0.1.4
+23 silly idealTree   └─┬ socket.io-parser@2.2.6
+23 silly idealTree     ├── benchmark@1.0.0
+23 silly idealTree     ├── component-emitter@1.1.2
+23 silly idealTree     ├── isarray@0.0.1
+23 silly idealTree     └── json3@3.3.2
+24 silly generateActionsToTake Starting
+25 silly install generateActionsToTake
+26 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\express\node_modules\accepts.meta
+27 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\express\node_modules\accepts\node_modules\mime-types.meta
+28 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\express\node_modules\accepts\node_modules\mime-types\node_modules\mime-db.meta
+29 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\express\node_modules\accepts\node_modules\negotiator.meta
+30 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\express\node_modules\array-flatten.meta
+31 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\express\node_modules\content-disposition.meta
+32 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\express\node_modules\content-type.meta
+33 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\express\node_modules\cookie-signature.meta
+34 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\express\node_modules\cookie.meta
+35 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\express\node_modules\debug.meta
+36 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\express\node_modules\debug\node_modules\ms.meta
+37 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\express\node_modules\escape-html.meta
+38 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\express\node_modules\depd.meta
+39 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\express\node_modules\finalhandler.meta
+40 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\express\node_modules\etag.meta
+41 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\express\node_modules\finalhandler\node_modules\unpipe.meta
+42 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\express\node_modules\merge-descriptors.meta
+43 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\express\node_modules\fresh.meta
+44 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\express\node_modules\on-finished.meta
+45 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\express\node_modules\methods.meta
+46 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\express\node_modules\on-finished\node_modules\ee-first.meta
+47 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\express\node_modules\path-to-regexp.meta
+48 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\express\node_modules\parseurl.meta
+49 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\express\node_modules\proxy-addr.meta
+50 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\express\node_modules\proxy-addr\node_modules\forwarded.meta
+51 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\express\node_modules\proxy-addr\node_modules\ipaddr.js.meta
+52 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\express\node_modules\qs.meta
+53 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\express\node_modules\range-parser.meta
+54 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\express\node_modules\send.meta
+55 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\express\node_modules\send\node_modules\destroy.meta
+56 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\express\node_modules\send\node_modules\http-errors.meta
+57 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\express\node_modules\send\node_modules\http-errors\node_modules\inherits.meta
+58 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\express\node_modules\send\node_modules\ms.meta
+59 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\express\node_modules\send\node_modules\mime.meta
+60 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\express\node_modules\serve-static.meta
+61 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\express\node_modules\send\node_modules\statuses.meta
+62 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\express\node_modules\type-is.meta
+63 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\express\node_modules\type-is\node_modules\mime-types.meta
+64 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\express\node_modules\type-is\node_modules\media-typer.meta
+65 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\express\node_modules\utils-merge.meta
+66 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\express\node_modules\type-is\node_modules\mime-types\node_modules\mime-db.meta
+67 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\express\node_modules\vary.meta
+68 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\debug.meta
+69 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\log-timestamp\node_modules\log-prefix.meta
+70 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\engine.io.meta
+71 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\debug\node_modules\ms.meta
+72 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\engine.io\node_modules\accepts.meta
+73 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\engine.io\node_modules\accepts\node_modules\mime-types.meta
+74 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\engine.io\node_modules\accepts\node_modules\mime-types\node_modules\mime-db.meta
+75 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\engine.io\node_modules\accepts\node_modules\negotiator.meta
+76 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\engine.io\node_modules\base64id.meta
+77 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\engine.io\node_modules\engine.io-parser.meta
+78 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\engine.io\node_modules\engine.io-parser\node_modules\after.meta
+79 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\engine.io\node_modules\engine.io-parser\node_modules\arraybuffer.slice.meta
+80 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\engine.io\node_modules\engine.io-parser\node_modules\base64-arraybuffer.meta
+81 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\engine.io\node_modules\engine.io-parser\node_modules\blob.meta
+82 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\engine.io\node_modules\engine.io-parser\node_modules\has-binary.meta
+83 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\engine.io\node_modules\engine.io-parser\node_modules\has-binary\node_modules\isarray.meta
+84 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\engine.io\node_modules\engine.io-parser\node_modules\utf8.meta
+85 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\engine.io\node_modules\ws.meta
+86 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\engine.io\node_modules\ws\node_modules\options.meta
+87 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\engine.io\node_modules\ws\node_modules\ultron.meta
+88 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\has-binary.meta
+89 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\has-binary\node_modules\isarray.meta
+90 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\socket.io-adapter.meta
+91 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\socket.io-adapter\node_modules\socket.io-parser.meta
+92 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\socket.io-adapter\node_modules\socket.io-parser\node_modules\benchmark.meta
+93 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\socket.io-adapter\node_modules\socket.io-parser\node_modules\component-emitter.meta
+94 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\socket.io-adapter\node_modules\socket.io-parser\node_modules\debug.meta
+95 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\socket.io-adapter\node_modules\socket.io-parser\node_modules\isarray.meta
+96 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\socket.io-adapter\node_modules\socket.io-parser\node_modules\json3.meta
+97 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\socket.io-client.meta
+98 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\socket.io-client\node_modules\backo2.meta
+99 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\socket.io-client\node_modules\component-bind.meta
+100 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\socket.io-client\node_modules\component-emitter.meta
+101 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\socket.io-client\node_modules\engine.io-client.meta
+102 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\socket.io-client\node_modules\engine.io-client\node_modules\component-emitter.meta
+103 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\socket.io-client\node_modules\engine.io-client\node_modules\component-inherit.meta
+104 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\socket.io-client\node_modules\engine.io-client\node_modules\engine.io-parser.meta
+105 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\socket.io-client\node_modules\engine.io-client\node_modules\engine.io-parser\node_modules\after.meta
+106 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\socket.io-client\node_modules\engine.io-client\node_modules\engine.io-parser\node_modules\arraybuffer.slice.meta
+107 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\socket.io-client\node_modules\engine.io-client\node_modules\engine.io-parser\node_modules\base64-arraybuffer.meta
+108 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\socket.io-client\node_modules\engine.io-client\node_modules\engine.io-parser\node_modules\blob.meta
+109 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\socket.io-client\node_modules\engine.io-client\node_modules\engine.io-parser\node_modules\has-binary.meta
+110 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\socket.io-client\node_modules\engine.io-client\node_modules\engine.io-parser\node_modules\has-binary\node_modules\isarray.meta
+111 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\socket.io-client\node_modules\engine.io-client\node_modules\engine.io-parser\node_modules\utf8.meta
+112 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\socket.io-client\node_modules\engine.io-client\node_modules\has-cors.meta
+113 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\socket.io-client\node_modules\engine.io-client\node_modules\parsejson.meta
+114 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\socket.io-client\node_modules\engine.io-client\node_modules\parsejson\node_modules\better-assert.meta
+115 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\socket.io-client\node_modules\engine.io-client\node_modules\parsejson\node_modules\better-assert\node_modules\callsite.meta
+116 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\socket.io-client\node_modules\engine.io-client\node_modules\parseqs.meta
+117 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\socket.io-client\node_modules\engine.io-client\node_modules\parseqs\node_modules\better-assert.meta
+118 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\socket.io-client\node_modules\engine.io-client\node_modules\parseqs\node_modules\better-assert\node_modules\callsite.meta
+119 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\socket.io-client\node_modules\engine.io-client\node_modules\ws.meta
+120 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\socket.io-client\node_modules\engine.io-client\node_modules\ws\node_modules\options.meta
+121 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\socket.io-client\node_modules\engine.io-client\node_modules\ws\node_modules\ultron.meta
+122 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\socket.io-client\node_modules\engine.io-client\node_modules\xmlhttprequest-ssl.meta
+123 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\socket.io-client\node_modules\engine.io-client\node_modules\yeast.meta
+124 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\socket.io-client\node_modules\indexof.meta
+125 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\socket.io-client\node_modules\object-component.meta
+126 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\socket.io-client\node_modules\parseuri.meta
+127 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\socket.io-client\node_modules\parseuri\node_modules\better-assert.meta
+128 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\socket.io-client\node_modules\parseuri\node_modules\better-assert\node_modules\callsite.meta
+129 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\socket.io-client\node_modules\to-array.meta
+130 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\socket.io-parser.meta
+131 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\socket.io-parser\node_modules\benchmark.meta
+132 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\socket.io-parser\node_modules\component-emitter.meta
+133 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\socket.io-parser\node_modules\isarray.meta
+134 warn checkPermissions Missing write access to D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io\node_modules\socket.io-parser\node_modules\json3.meta
+135 silly rollbackFailedOptional Starting
+136 silly rollbackFailedOptional Finishing
+137 silly runTopLevelLifecycles Starting
+138 silly runTopLevelLifecycles Finishing
+139 silly install printInstalled
+140 warn enoent ENOENT, open 'D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\ejs.meta\package.json'
+141 warn enoent ENOENT, open 'D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\express.meta\package.json'
+142 warn enoent ENOENT, open 'D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\ip.meta\package.json'
+143 warn enoent ENOENT, open 'D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\log-timestamp.meta\package.json'
+144 warn enoent ENOENT, open 'D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\socket.io.meta\package.json'
+145 warn prototype@1.0.0 No description
+146 warn prototype@1.0.0 No repository field.
+147 verbose stack Error: EACCES, access 'D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\express\node_modules\accepts.meta'
+147 verbose stack     at module.exports (C:\Program Files\nodejs\node_modules\npm\lib\install\access-error.js:4:18)
+147 verbose stack     at C:\Program Files\nodejs\node_modules\npm\lib\install\writable.js:30:25
+147 verbose stack     at C:\Program Files\nodejs\node_modules\npm\node_modules\graceful-fs\graceful-fs.js:230:16
+147 verbose stack     at FSReqWrap.oncomplete (fs.js:95:15)
+148 verbose cwd D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter
+149 error Windows_NT 10.0.10586
+150 error argv "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install"
+151 error node v0.12.9
+152 error npm  v3.5.3
+153 error path D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\express\node_modules\accepts.meta
+154 error code EACCES
+155 error Error: EACCES, access 'D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\express\node_modules\accepts.meta'
+155 error     at module.exports (C:\Program Files\nodejs\node_modules\npm\lib\install\access-error.js:4:18)
+155 error     at C:\Program Files\nodejs\node_modules\npm\lib\install\writable.js:30:25
+155 error     at C:\Program Files\nodejs\node_modules\npm\node_modules\graceful-fs\graceful-fs.js:230:16
+155 error     at FSReqWrap.oncomplete (fs.js:95:15)
+155 error  { [Error: EACCES, access 'D:\Documents\GitHub\hackpoly_game\Handheld_Server\WebPlayerTemplates\Space Shooter\node_modules\express\node_modules\accepts.meta']
+155 error   code: 'EACCES',
+155 error   path: 'D:\\Documents\\GitHub\\hackpoly_game\\Handheld_Server\\WebPlayerTemplates\\Space Shooter\\node_modules\\express\\node_modules\\accepts.meta' }
+156 error Please try running this command again as root/Administrator.
+157 verbose exit [ 1, true ]
