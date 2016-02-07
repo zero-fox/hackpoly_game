@@ -48,12 +48,25 @@ $(document).ready(function () {
 
 
 	var conn = new Connection();
-	playersId = makeid();
-	messageTemplate = {"type": null, "playerId": playersId};
 
-	messageTemplate["type"] = "connect";
+	$("#sign-in").on("click", function() {
+		console.log("signing in and connecting");
 
-	conn.sendMessage(messageTemplate);
+		$("#name-input").hide();
+		$("#sign-in").hide();
+
+		var playersName = document.getElementById("name-input").value;
+		console.log("got value: ", playersName);
+
+		playersId = makeid();
+		messageTemplate = {"type": null, "playerId": playersId, "playerName":playersName};
+
+		messageTemplate["type"] = "connect";
+
+		conn.sendMessage(messageTemplate);
+	});		
+	
+	
 
 	
 
@@ -98,7 +111,7 @@ $(document).ready(function () {
 		moveUpdate(ev);
 
 	    messageTemplate["type"] = "movement";
-	    
+
 	    var newX = parseInt(ev.target.offsetLeft)- 50;
 	    messageTemplate.direction = newX;
 

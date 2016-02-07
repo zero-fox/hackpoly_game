@@ -5,13 +5,16 @@ public class Player : MonoBehaviour {
 
     static public int playerIndex = 1;
 	public string playerId;
-	public float initialHealth = 100;
+	public int initialHealth = 100;
 	public float fireRate = 10.0f;
 	public float rotationSpeed = 5.0f;
     public float thrust = 1000.0f;
     public Color shipColor;
     public GameObject bulletPrefab;
 	public GameObject explosionPrefab;
+	public int myPoints = 0;
+
+	float attackRange = 10.0f;
 
     public GameObject[] players;
     float health;
@@ -22,9 +25,12 @@ public class Player : MonoBehaviour {
     Rigidbody rb;
     BladeCast.BCSender sender;
 
+	GameObject textObj;
+
     void Awake()
     {
         GetComponent<Renderer>().material.SetColor("_Color", shipColor);
+		textObj = transform.GetChild (0).GetChild (0).gameObject;
     }
 
 	// Use this for initialization
@@ -38,6 +44,24 @@ public class Player : MonoBehaviour {
         listener.Add("attack", 0, "Attack");
 		rb = GetComponent<Rigidbody>();
         
+	}
+
+	void Update() {
+		if (Input.GetKeyDown (KeyCode.LeftArrow)) {
+			rb.AddForce (Vector3.right * -100.0f);
+		}
+
+		if (Input.GetKeyDown (KeyCode.UpArrow)) {
+			rb.AddForce (Vector3.up * 100.0f);
+		}
+
+		if (Input.GetKeyDown (KeyCode.RightArrow)) {
+			rb.AddForce (Vector3.right * 100.0f);
+		}
+	}
+
+	void FixedUpdate() {
+		textObj.transform.position = GameManager.Instance.mainCamera.WorldToScreenPoint (transform.position);	
 	}
 
 	void Move(ControllerMessage msg) {
@@ -64,10 +88,44 @@ public class Player : MonoBehaviour {
             //hit someone
 			if (msg.Payload.HasField("attack")) {
 				Debug.Log ("doing an attack!");
+
+				//eventually kill this
 				rb.AddForce(Vector3.right * 20.0f);
+
+				ShootAttackVector (transform.right);	//should throw raycast to the sprite's forward direction
+
+
+
 
 			}
         }
+	}
+
+	void ShootAttackVector(Vector3 direction) {
+		RaycastHit hit;
+		Debug.DrawLine (transform.position, direction);
+
+		if (Physics.Raycast (transform.position, direction, attackRange, out hit)) {
+			
+			if (hit.transform.tag == "Player") {
+				Player hitPlayer = hit.rigidbody.gameObject.GetComponent<Player> ();
+				if (hitPlayer.GetHit (transform.position)) {	//if we killed them
+					myPoints++;
+					GameManager.Instance.CheckPlayersWinCondition ();
+				}
+			}
+		}
+	}
+
+	//returns true if player died
+	public bool GetHit(Vector3 originPoint) {
+		rb.AddForce ((transform.position - originPoint) * 100.0f);	//shoots player in the direction of the hit
+		rb.AddForce(Vector3.up * 100.0f);
+		initialHealth -= 10;
+		if (initialHealth <= 0)
+			return true;
+		else
+			return false;
 	}
 
 	void Jump(ControllerMessage msg) {

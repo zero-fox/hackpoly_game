@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using BladeCast;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
@@ -10,16 +11,26 @@ public class GameManager : MonoBehaviour {
 	public GameObject playerPrefab;
 	BladeCast.BCSender sender;
 
+	[System.NonSerialized]
+	public int victoryPointsCondition = 4;	//is actually 5
+
 	public List<JSONObject> recentJsons = new List<JSONObject> ();
-	GameManager Instance;
+	static public GameManager Instance;
+	public List<Player> playerList = new List<Player>();
+
+	private GameObject gameOverCanvas;
+	public Camera mainCamera;
 
 	void Awake() {
 		Instance = this;
+		gameOverCanvas = GameObject.Find ("GameOverCanvas");
+		mainCamera = GameObject.Find ("Main Camera").GetComponent<Camera> ();
 	}
 
 
 	void Start () {
 		Application.runInBackground = true;
+		gameOverCanvas.SetActive (false);
 		//how to do stuffff
 
 
@@ -36,12 +47,21 @@ public class GameManager : MonoBehaviour {
 
 	}
 
+	public void CheckPlayersWinCondition() {
+		foreach (Player ply in playerList) {
+			if (ply.myPoints >= victoryPointsCondition) {
+				GameOver (ply);
+			}
+		}
+	}
+
 	void SpawnAPlayer0() {
 		string tempPlayerId = Random.value.ToString ();
 		playersRegistered.Add (tempPlayerId);
 
 		GameObject newPlayer = Instantiate (playerPrefab) as GameObject;
 		newPlayer.GetComponent<Player> ().playerId = tempPlayerId;
+		playerList.Add (newPlayer.GetComponent<Player> ());
 
 	}
 	
@@ -54,7 +74,18 @@ public class GameManager : MonoBehaviour {
 
 				GameObject newPlayer = Instantiate (playerPrefab) as GameObject;
 				newPlayer.GetComponent<Player> ().playerId = msg.Payload.GetField ("playerId").str;
+				newPlayer.name = msg.Payload.GetField ("playerName").str;
+				newPlayer.transform.GetChild (0).GetChild (0).GetComponent<Text> ().text = newPlayer.name;
+				playerList.Add (newPlayer.GetComponent<Player> ());
 			}
 		}
+	}
+
+	void GameOver(Player winnerPlayer) {
+		gameOverCanvas.SetActive (true);
+
+		string buildGameOverText = "GameOver! \n";
+		buildGameOverText = buildGameOverText + winnerPlayer.name + " has won the game!";
+		gameOverCanvas.transform.GetChild(0).gameObject.GetComponent<Text>().text = buildGameOverText;
 	}
 }
