@@ -40,7 +40,24 @@ u.degrees = function(a) {
     return a * (180 / Math.PI);
 };
 
+var playersId;
+var messageTemplate;
+
+
 $(document).ready(function () {
+
+
+	var conn = new Connection();
+	playersId = makeid();
+	messageTemplate = {"type": null, "playerId": playersId};
+
+	messageTemplate["type"] = "connect";
+
+	conn.sendMessage(messageTemplate);
+
+	
+
+
 
 	var health = 100;
 
@@ -79,14 +96,28 @@ $(document).ready(function () {
 
 	manager.on("pan1move pan2move", function(ev) {
 		moveUpdate(ev);
+
+	    messageTemplate["type"] = "movement";
+	    
+	    var newX = parseInt(ev.target.offsetLeft)- 50;
+	    messageTemplate.direction = newX;
+
+
+	    messageTemplate.force = "millIOns";
+	    conn.sendMessage(messageTemplate);
+
 	});
 
 	manager.on("pan1end pan2end", function(ev) {
 		manager.rotationLast = ev.rotation;
 		moveStart(ev);
+		console.log("pan end");
+		resetJoystick(ev);
+
 	});
 
 	manager.on("rotatemove",function(ev){
+		console.log("rotatemove-ing");
 
 	    var isCW = ev.rotation > manager.rotationLast;
 
@@ -105,11 +136,14 @@ $(document).ready(function () {
 	    performRotation(ev.target,manager.currentAngle,ev);
 
 	    manager.rotationLast = ev.rotation;
-	    conn.sendMessage({"type": "movement", "angle": ev.rotation, "force": "million"});	
+	    messageTemplate["type"] = "movement";
+	    messageTemplate.angle = ev.rotation;
+	    messageTemplate.force = "millIOns";
+	    conn.sendMessage(messageTemplate);	
 	});
 
 	  manager.on("rotateend",function(ev){
-
+	  	console.log("rotateend-ing");
 	  });
 
 
@@ -121,8 +155,7 @@ $(document).ready(function () {
 	console.log("Document Loaded");
 
 	// INIT..
-	var conn = new Connection();
-	conn.sendMessage({"type": "connect"});
+
 
 	// Movement Joystick
 	
@@ -147,7 +180,11 @@ $(document).ready(function () {
 		if (prevAngle !== angle && prevDistance != distance) {
 			prevAngle = angle !== 0 ? angle : prevAngle;
 			prevDistance = distance;
-			conn.sendMessage({"type": "movement", "angle": -prevAngle, "force": distance/50});			
+
+			//messageTemplate["type"] = "movement";
+			//messageTemplate.angle = -prevAngle;
+			//messageTemplate.force = distance / 50;
+			//conn.sendMessage(messageTemplate);			
 		}
 
 	}, 1000/20);
@@ -166,29 +203,38 @@ $(document).ready(function () {
 		return true
 	});
 	shooting.addEventListener('touchStart', function(){
-		conn.sendMessage({"type": "fire"});
+		messageTemplate["type"] = "fire";
+		conn.sendMessage(messageTemplate);
 	})
 	
 	//jump button 
 
 	$("#jump-button").on("click", function() {
 		console.log("jumping");
-		conn.sendMessage({"type": "jump", "force": "million"});	
+
+		messageTemplate["type"] = "jump";
+		messageTemplate.force = "trillions";
+		messageTemplate.jump = "yes";
+
+		conn.sendMessage(messageTemplate);	
 	});		
 
 	$("#attack-button").on("click", function() {
 		console.log("attacking");
-		conn.sendMessage({"type": "attack", "force": "million"});	
+		messageTemplate["type"] = "attack";
+		messageTemplate.force = "a billion";
+		conn.sendMessage(messageTemplate);	
 	});		
 
 
 
-
+	//i dont think this is ever called anymore
 	$("#spawn").on('touchup', function() {
 		$("#spawn").hide();
 		$("#health").show();		
 		conn.sendMessage({"type": "spawn"});
 	});
+
 
 	// Process incoming game messages
 	$(document).on("game_message", function (e, message) {
@@ -218,12 +264,14 @@ $(document).ready(function () {
 	});
 
 	 function moveStart(ev) {
+	 	console.log("move start");
     manager.lastX = ev.center.x;
     manager.lastY = ev.center.y;
     if (manager.currentTween) manager.currentTween.kill();
   }
 
   function moveUpdate(ev) {
+  	console.log("move updating");
     var deltaX = manager.lastX-ev.center.x;
     var deltaY = manager.lastY-ev.center.y;
 
@@ -237,6 +285,17 @@ $(document).ready(function () {
 
     manager.lastX = ev.center.x;
     manager.lastY = ev.center.y;
+    console.log("new x: ", newX, "newY: ", newY);
+  }
+
+  function resetJoystick(ev) {
+  	console.log("resettting joystick");
+
+
+      $(ev.target).css({
+        "left":50,
+        "top":50
+      })
   }
 
 
@@ -315,6 +374,16 @@ function rgbToHex(r, g, b) {
     return ((r << 16) | (g << 8) | b).toString(16);
 }
 
+function makeid()
+{
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for( var i=0; i < 20; i++ )
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    return text;
+}
 	
 });
 
