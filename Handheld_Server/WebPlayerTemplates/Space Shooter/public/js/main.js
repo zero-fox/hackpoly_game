@@ -264,13 +264,30 @@ $(document).ready(function () {
 				}
 				$('#health').text(Math.round(health));
 			case "disabled":
-				console.log("this player is disabled");
-				document.body.style.background = "black";
+				if (payload.playerId != playersId) {
+					console.log("this player is disabled");
+					document.body.style.background = "black";
+				}
 				break;
 			case "enabled":
-				console.log("this player is renabled");
-				document.body.style.background = "white";
+					console.log("this player is re-enabled");
+					document.body.style.background = "white";
+			
 				break;
+			case "died":
+				if (payload.playerId == playersId) {
+					console.log("got that player died");
+					$('#health').text("YOU DIED");
+					document.body.style.background = "red";
+				}
+				break;
+
+			case "score":
+				if (payload.playerId == playersId) {
+					$('#score').text("My Score: " + payload.points);
+				}
+				break;
+
 			default:
 				break;
 		}

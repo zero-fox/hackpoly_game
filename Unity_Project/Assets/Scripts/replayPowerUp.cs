@@ -3,27 +3,25 @@ using System.Collections;
 
 public class replayPowerUp : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+	public bool isDoing = true;
+
 
 	void OnTriggerEnter(Collider other) {
-		if (other.tag == "Player") {
-			//calls game manager with the player that collected it
-			//game manager waits until sufficient json has been collected from that player 
-			//(makes a delegate and counts somehow)
-			//after sufficient passed, send messages to all handhelds with replay string
-			//on HH: if string is not player name, accept replays
-			//game manager: when all json is replayed, enable HH again
-			
+		if (other.tag == "Player" && isDoing) {
+			//Debug.Log ("replay attack triggered");
+			GameManager.Instance.ExecuteReplayPowerUp (other.gameObject.GetComponent<Player> ());
+			GameManager.Instance.powerUpInPlay = false;
 
-			Destroy (gameObject);	//clean this up
+			//gameObject.SetActive (false);
+			StartCoroutine (DestroyMe ());
+			//Destroy (gameObject);
 		}
+
+	}
+
+	public IEnumerator DestroyMe() {
+		isDoing = false;
+		yield return new WaitForSeconds (6.0f);
+		Destroy (gameObject);
 	}
 }

@@ -8,26 +8,25 @@ public class DisablePowerUp : MonoBehaviour {
 	
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+	public bool isDoing = true;
 
 	//research this
 
 	void OnTriggerEnter(Collider other) {
-		if (other.tag == "Player") {
-			//alls game manager with the player as a parameter
-			//broadcasts to HH -> if their name doesn tmatch it,
-			//disable
-			//game manager starts coroutine, resumes control after 3 seconds
-			//sends message to HH to resume control
+		if (other.tag == "Player" && isDoing) {
+			//Debug.Log ("disable attack triggered");
+			StartCoroutine (GameManager.Instance.ExecuteDisablePlayersPowerUp (other.gameObject.GetComponent<Player> ()));
+			GameManager.Instance.powerUpInPlay = false;
 
-			//note: the listeners are all handled with game manager on TT side, not HH side
-
-
-			Destroy (gameObject);
+			//gameObject.SetActive (false);
+			StartCoroutine (DestroyMe ());
+			//Destroy (gameObject);
 		}
 
+	}
+	public IEnumerator DestroyMe() {
+		isDoing = false;
+		yield return new WaitForSeconds (6.0f);
+		Destroy (gameObject);
 	}
 }

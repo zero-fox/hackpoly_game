@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using BladeCast;
+using System.Collections;
+
 
 public class Player : MonoBehaviour {
 
@@ -16,11 +18,19 @@ public class Player : MonoBehaviour {
 
 	float attackRange = 10.0f;
 
+	private bool isJumping = false;
+
     public GameObject[] players;
     float health;
     float fireTimer = 0.0f;
     float force = 0.0f;
     float angle = 0.0f;
+
+	public BCListener.Listener movementListener;
+	public BCListener.Listener jumpingListener;
+	public BCListener.Listener attackingListener;
+
+	public BladeCast.BCListener listener;
 
     Rigidbody rb;
     BladeCast.BCSender sender;
@@ -36,12 +46,20 @@ public class Player : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//how to do stuffff
-		BladeCast.BCListener listener = GetComponent<BladeCast.BCListener>();
+		listener = GetComponent<BladeCast.BCListener>();
         sender = GetComponent<BladeCast.BCSender>();
+		movementListener = new BCListener.Listener ("movement", 0, "Move");
+		listener.Add (movementListener);
+		//listener.Add("movement", 0, "Move");
 
-		listener.Add("movement", 0, "Move");
-		listener.Add("jump", 0, "Jump");
-        listener.Add("attack", 0, "Attack");
+		jumpingListener = new BCListener.Listener ("jump", 0, "Jump");
+		//listener.Add("jump", 0, "Jump");
+		listener.Add(jumpingListener);
+
+		attackingListener = new BCListener.Listener ("attack", 0, "Attack");
+        //listener.Add("attack", 0, "Attack");
+		listener.Add(attackingListener);
+
 		rb = GetComponent<Rigidbody>();
         
 	}
@@ -64,24 +82,35 @@ public class Player : MonoBehaviour {
 		textObj.transform.position = GameManager.Instance.mainCamera.WorldToScreenPoint (transform.position);	
 	}
 
-	void Move(ControllerMessage msg) {
+	public void Move(ControllerMessage msg) {
 
 		if (msg.ControllerSource == playerIndex && msg.Payload.GetField("playerId").str.Equals(playerId)) {
 			if (msg.Payload.HasField("direction")) {
-				Debug.Log ("got direction: " + msg.Payload.GetField ("direction").i.ToString());
+				//Debug.Log ("got direction: " + msg.Payload.GetField ("direction").i.ToString());
 				int direction = msg.Payload.GetField ("direction").i;
-				rb.AddForce((Vector3.right * (float)direction ) / 10.0f);
+				//rb.AddForce((Vector3.right * (float)direction ) / 10.0f);
+				transform.position = transform.position + ((Vector3.right * (float)direction ) / 10000.0f);
 
 
-				Debug.Log("direction string: " + msg.Payload.GetField("direction").ToString ());
+				//Debug.Log("direction string: " + msg.Payload.GetField("direction").ToString ());
 
 			}
 
-			Debug.Log ("did not get angle, fields: " + msg.Payload.ToString ());
+			//Debug.Log ("did not get angle, fields: " + msg.Payload.ToString ());
 		}
 	}
 
-	void Attack(ControllerMessage msg) {
+	public void UpdateHHOnPoints() {
+		JSONObject jo = new JSONObject ();
+		jo.AddField ("playerId", playerId);
+		jo.AddField ("points", myPoints);
+		ControllerMessage cm = new ControllerMessage (0, 1, "score", jo);
+		//sender.SendToListeners("score", "playerId", playerId, "points", myPoints.ToString(), 1);
+		sender.SendToListeners(cm);
+
+	}
+
+	public void Attack(ControllerMessage msg) {
 		Debug.Log ("got attack listen event");
 		if (msg.ControllerSource == playerIndex && msg.Payload.GetField("playerId").str.Equals(playerId))
         {
@@ -90,9 +119,10 @@ public class Player : MonoBehaviour {
 				Debug.Log ("doing an attack!");
 
 				//eventually kill this
-				rb.AddForce(Vector3.right * 20.0f);
+				//rb.AddForce(Vector3.right * 20.0f);
 
-				ShootAttackVector (transform.right);	//should throw raycast to the sprite's forward direction
+				ShootAttackVector (Vector3.right * 5.0f);	//should throw raycast to the sprite's forward direction
+				ShootAttackVector (Vector3.right * -5.0f);	//should throw raycast to the sprite's forward direction
 
 
 
@@ -128,20 +158,35 @@ public class Player : MonoBehaviour {
 			return false;
 	}
 
-	void Jump(ControllerMessage msg) {
+	public void Jump(ControllerMessage msg) {
 		//Debug.Log ("got jump listen event");
 		//Debug.Log (msg.ControllerSource.ToString () + ", is the contrl source, the playerid match?: " + msg.Payload.GetField ("playerId").str + ":" + playerId);
 
 		if (msg.ControllerSource == playerIndex && msg.Payload.GetField("playerId").str.Equals(playerId))
 		{
 			//Debug.Log ("match");
-			if (msg.Payload.HasField("jump")) {
-				Debug.Log ("doing a jump");
-				rb.AddForce(Vector3.up * 100.0f);
+			if (msg.Payload.HasField("jump") && !isJumping) {
+				
+				StartCoroutine (JumpWithCoolDown ());
 			}
 		}
 	}
 
+	public IEnumerator JumpWithCoolDown() {
+		Debug.Log ("doing a jump");
+		rb.AddForce(Vector3.up * 500.0f);
+		isJumping = true;
+		yield return new WaitForSeconds (4.0f);
+		isJumping = false;
+	}
+
+	void OnDestroy() {
+		SendDieMessage ();
+	}
+
+	public void SendDieMessage() {
+		sender.SendToListeners("died", "playerId", playerId, 1);
+	}
 
     
 }
