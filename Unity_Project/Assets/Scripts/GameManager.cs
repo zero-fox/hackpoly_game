@@ -144,13 +144,13 @@ public class GameManager : MonoBehaviour {
 		powerUpInPlay = true;
 		Debug.Log ("actually doing power up");
 		//change this
-		if (Random.value > 0.90f) {
+		if (Random.value > 0.30f) {
 			GameObject power = Instantiate (disablePowerupPrefab) as GameObject;
 			power.transform.position = floor1Obj.transform.position + Vector3.up * 2.0f;
 		} else {
 			GameObject replayThing = Instantiate (replayAttackPrefab) as GameObject;
-			//replayThing.transform.position = floor2Obj.transform.position + Vector3.up * 2.0f;
-			replayThing.transform.position = floor2Obj.transform.position - Vector3.up * 3.0f;
+			replayThing.transform.position = floor2Obj.transform.position + Vector3.up * 2.0f;
+			//replayThing.transform.position = floor2Obj.transform.position - Vector3.up * 3.0f;
 		}
 
 	}
