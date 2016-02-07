@@ -105,7 +105,7 @@ public class Player : MonoBehaviour {
 		RaycastHit hit;
 		Debug.DrawLine (transform.position, direction);
 
-		if (Physics.Raycast (transform.position, direction, attackRange, out hit)) {
+		if (Physics.Raycast (transform.position, direction, out hit, attackRange)) {
 			
 			if (hit.transform.tag == "Player") {
 				Player hitPlayer = hit.rigidbody.gameObject.GetComponent<Player> ();

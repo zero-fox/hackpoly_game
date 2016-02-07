@@ -9,10 +9,15 @@ public class GameManager : MonoBehaviour {
 	[System.NonSerialized]
 	public List<string> playersRegistered = new List<string>();
 	public GameObject playerPrefab;
+	public GameObject disablePowerupPrefab;
+	public GameObject replayAttackPrefab;
+
+
+
 	BladeCast.BCSender sender;
 
 	[System.NonSerialized]
-	public int victoryPointsCondition = 4;	//is actually 5
+	public int victoryPointsCondition = 4;	//is actually 5 points
 
 	public List<JSONObject> recentJsons = new List<JSONObject> ();
 	static public GameManager Instance;
@@ -40,11 +45,17 @@ public class GameManager : MonoBehaviour {
 
 	}
 
+
+
 	void Update() {
 		if (Input.GetKeyDown (KeyCode.Space)) {
 			SpawnAPlayer0 ();
 		}
 
+	}
+
+	public void sendthing() {
+		sender.SendToListeners("health", "health", health, 1);
 	}
 
 	public void CheckPlayersWinCondition() {
