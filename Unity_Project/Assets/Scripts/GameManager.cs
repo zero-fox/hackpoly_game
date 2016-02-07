@@ -149,7 +149,8 @@ public class GameManager : MonoBehaviour {
 			power.transform.position = floor1Obj.transform.position + Vector3.up * 2.0f;
 		} else {
 			GameObject replayThing = Instantiate (replayAttackPrefab) as GameObject;
-			replayThing.transform.position = floor2Obj.transform.position + Vector3.up * 2.0f;
+			//replayThing.transform.position = floor2Obj.transform.position + Vector3.up * 2.0f;
+			replayThing.transform.position = floor2Obj.transform.position - Vector3.up * 3.0f;
 		}
 
 	}
@@ -165,9 +166,12 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void SaveJson(ControllerMessage msg) {
-		if (isSavingJson)
+		if (isSavingJson) {
+			Debug.Log ("saving a message");
 			recentJsons.Add (msg.Payload);
-		if (recentJsons.Count > 500) {
+		}
+		if (recentJsons.Count > 100) {
+			Debug.LogError ("done saving message");
 			isSavingJson = false;
 			StartCoroutine (ReplayToPlayer ());
 		}
