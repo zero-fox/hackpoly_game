@@ -1,50 +1,112 @@
+/* Empty. Add your own CSS if you like */
+/*#myElement {
+  background: silver;
+  height: 300px;
+  text-align: center;
+  font: 30px/300px Helvetica, Arial, sans-serif;
+}*/
+#wrapper {
+  position: relative;
+}
+
+.hammerjs-element {
+
+}
+
+.controller-wrapper {
+  text-align: center;
+  overflow: hidden;
+}
+
+.control-wrapper {
+  width: 200px;
+	height: 200px;
+}
+
+.circle-socket {
+  width: 200px;
+  height: 200px;
+
+  -moz-border-radius: 150px;
+  -webkit-border-radius: 150px;
+  border-radius: 150px;
+
+  position: relative;
+}
+
+#info-panel {
+  width: 100px;
+  margin: 0 auto;
+  display: inline-block;
+  text-align: center;
+}
+
+#joystick-wrapper {
+    float: left;
+}
+
+#joystick-socket {
+  background: gray;
+}
+
+#jump-button {
+  width: 0;
+  height: 0;
+  border: 0 solid transparent;
+  border-bottom-width: 100px;
+  border-top-width: 0px;
+  border-left: 200px solid blue;
+  word-wrap: break-word;
+  position: absolute;
+  top: 10px;
+}
+
+#attack-button {
+  width: 0;
+  height: 0;
+  border: 0 solid transparent;
+  border-top-width: 100px;
+  border-bottom-width: 0px;
+  border-right: 200px solid red;
+  position: absolute;
+  top:100px;
+}
+
 body {
-	width: 100vw;
-	height: 100vh;
-	background: black;
+background: black;
+
 }
 
-.joystick {
-	position: absolute;
-	bottom: 0;
-	width: 50vw;
-	height: 100vh;
-	margin: 0;
-	padding: 0;
+#joystick-knob {
+	width: 90px;
+	height: 90px;
+	background: blue;
+	-moz-border-radius: 45px;
+	-webkit-border-radius: 45px;
+	border-radius: 45px;
+
+  position: absolute;
+  top: 100px;
+  left: 100px;
 }
 
-#movement {
-	top: 0;
-	left: 0;
+#button-wrapper {
+  float: right;
 }
 
-#shooting {
-	top: 0;
-	right: 0;
+#button-socket {
+  background: gray;
 }
 
-#health {
-	font-family: "Arial Black", Gadget, sans-serif;
-	font-size: 2em;
-	color: red;
-	position: absolute;
-	width: 200px;
-	height: 100px;
-	top: 10px;
-	left: 50%;
-	margin-left: -100px;
-	text-align: center;
-}
+#button-center {
+  width: 90px;
+  height: 90px;
+  background: red;
+  -moz-border-radius: 45px;
+  -webkit-border-radius: 45px;
+  border-radius: 45px;
 
-#spawn {
-	display: none;
-	font-size: 2em;
-	color: red;
-	position: absolute;
-	width: 200px;
-	height: 100px;
-	top: 10px;
-	left: 50%;
-	margin-left: -100px;
-	text-align: center;	
+  position: absolute;
+  top: 55px;
+  left: 55px;
 }

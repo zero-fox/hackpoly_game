@@ -44,6 +44,80 @@ $(document).ready(function () {
 
 	var health = 100;
 
+	var myJoystick = document.getElementById("joystick-knob");
+
+	//var hammertime = new Hammer(myJoystick);
+	var manager = new Hammer.Manager(myJoystick);
+	// hammertime.on("pan", function(ev) {
+	// 	console.log("panned");
+	// });
+
+	var defaultPosition = 55;
+	var maxDelta = 80;
+
+	var pan1 = new Hammer.Pan({
+		event: "pan1",
+		pointers: 1,
+		direction: Hammer.DIRECTION_ALL
+	});
+
+	var rotateA = new Hammer.Rotate({
+		event:'rotate',
+		pointers: 2
+	});
+
+	rotateA.recognizeWith(pan1);
+	pan1.requireFailure(rotateA);
+
+	manager.add([rotateA, pan1]);
+
+	manager.currentAngle = 0;
+
+	manager.on("pan1start pan2start", function(ev) {
+		moveStart(ev);
+	});
+
+	manager.on("pan1move pan2move", function(ev) {
+		moveUpdate(ev);
+	});
+
+	manager.on("pan1end pan2end", function(ev) {
+		manager.rotationLast = ev.rotation;
+		moveStart(ev);
+	});
+
+	manager.on("rotatemove",function(ev){
+
+	    var isCW = ev.rotation > manager.rotationLast;
+
+	    var delta = Math.abs(ev.rotation-manager.rotationLast);
+
+	    // depending on the order of touches
+	    // ev.rotation jumps from ~-50 to ~300
+	    if (delta>100) delta=5; // handle ev.rotation jump
+
+	    if (!isCW) {
+	      manager.currentAngle-=delta;
+	    } else {
+	      manager.currentAngle+=delta;
+	    }
+
+	    performRotation(ev.target,manager.currentAngle,ev);
+
+	    manager.rotationLast = ev.rotation;
+	    conn.sendMessage({"type": "movement", "angle": ev.rotation, "force": "million"});	
+	});
+
+	  manager.on("rotateend",function(ev){
+
+	  });
+
+
+
+
+
+
+
 	console.log("Document Loaded");
 
 	// INIT..
@@ -94,7 +168,21 @@ $(document).ready(function () {
 	shooting.addEventListener('touchStart', function(){
 		conn.sendMessage({"type": "fire"});
 	})
-		
+	
+	//jump button 
+
+	$("#jump-button").on("click", function() {
+		console.log("jumping");
+		conn.sendMessage({"type": "jump", "force": "million"});	
+	});		
+
+	$("#attack-button").on("click", function() {
+		console.log("attacking");
+		conn.sendMessage({"type": "attack", "force": "million"});	
+	});		
+
+
+
 
 	$("#spawn").on('touchup', function() {
 		$("#spawn").hide();
@@ -116,8 +204,117 @@ $(document).ready(function () {
 					$("#health").hide();
 				}
 				$('#health').text(Math.round(health));
+			case "disabled":
+				console.log("this player is disabled");
+				document.body.style.background = "black";
+				break;
+			case "enabled":
+				console.log("this player is renabled");
+				document.body.style.background = "white";
+				break;
 			default:
 				break;
 		}
 	});
+
+	 function moveStart(ev) {
+    manager.lastX = ev.center.x;
+    manager.lastY = ev.center.y;
+    if (manager.currentTween) manager.currentTween.kill();
+  }
+
+  function moveUpdate(ev) {
+    var deltaX = manager.lastX-ev.center.x;
+    var deltaY = manager.lastY-ev.center.y;
+
+   var newX = parseInt(ev.target.offsetLeft)-deltaX;
+   var newY = parseInt(ev.target.offsetTop)-deltaY;
+
+      $(ev.target).css({
+        "left":newX,
+        "top":newY
+      })
+
+    manager.lastX = ev.center.x;
+    manager.lastY = ev.center.y;
+  }
+
+
+  function performRotation(target,angle,ev) {
+
+    this.options = {
+
+      rotationCenterX: 50,
+      rotationCenterY: 50
+    };
+
+    this.element = $(target);
+
+    moveUpdate(ev);
+
+    this.element.css('transform-origin', this.options.rotationCenterX + '% ' + this.options.rotationCenterY + '%');
+    this.element.css('-ms-transform-origin', this.options.rotationCenterX + '% ' + this.options.rotationCenterY + '%'); /* IE 9 */
+    this.element.css(
+      '-webkit-transform-origin',
+      this.options.rotationCenterX + '% ' + this.options.rotationCenterY + '%'); /* Chrome, Safari, Opera */
+
+    this.element.css('transform','rotate(' + angle + 'deg)');
+    this.element.css('-moz-transform','rotate(' + angle + 'deg)');
+    this.element.css('-webkit-transform','rotate(' + angle + 'deg)');
+    this.element.css('-o-transform','rotate(' + angle + 'deg)');
+  }
+
+
+  function impartMomentum(ev) {
+    var v = ev.velocity;
+    var vX = Math.abs(ev.velocityX)<Math.abs(ev.overallVelocityX) ? ev.overallVelocityX : ev.velocityX;
+    var vY = Math.abs(ev.velocityY)<Math.abs(ev.overallVelocityY) ? ev.overallVelocityY : ev.velocityY;
+    var decel = 1; // distance per second squared
+    var time = Math.abs(v) / decel;
+
+    var coefficient = 300;
+    // d = v^2 / 2a
+
+    // get time travelled
+    // get destination x
+    var dX = Math.pow(vX,2) / (2*decel) * coefficient;
+    dX = (ev.velocityX>0) ? dX : -dX;
+    // get destination y
+    var dY = Math.pow(vY,2) / (2*decel) * coefficient;
+    dY = (ev.velocityY>0) ? dY : -dY;
+
+    var finalX = ev.target.offsetLeft+dX, finalY = ev.target.offsetTop+dY;
+
+    // get animation handler to cancel on new event start
+    manager.currentTween = TweenLite.to(ev.target, time, {left:finalX+"px",top:finalY+"px",
+      onUpdate: function(){
+        // prevent object from leaving bounds
+        if ((ev.target.offsetLeft<=0) || (ev.target.offsetTop<=0)) {
+           manager.currentTween.kill();
+        }
+      }
+    });
+  }
+
+
+  function findPos(obj) {
+    var curleft = 0, curtop = 0;
+    if (obj.offsetParent) {
+        do {
+            curleft += obj.offsetLeft;
+            curtop += obj.offsetTop;
+        } while (obj = obj.offsetParent);
+        return { x: curleft, y: curtop };
+    }
+    return undefined;
+}
+
+function rgbToHex(r, g, b) {
+    if (r > 255 || g > 255 || b > 255)
+        throw "Invalid color component";
+    return ((r << 16) | (g << 8) | b).toString(16);
+}
+
+	
 });
+

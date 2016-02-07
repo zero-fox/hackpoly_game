@@ -5,10 +5,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<title>EA Pathfinders</title>
 	<link rel="stylesheet" href="/css/style.css">
+
+
+    <script src="https://hammerjs.github.io/dist/hammer.js"></script>
+
 </head>
 <body>
-	<div id="health">100</div>
-	<button id="spawn">Start</button>
 	<!-- Required javascript libraries. Add your own libraries here. -->
 	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<script src="/socket.io/socket.io.js"></script>
@@ -17,5 +19,35 @@
 		
 	<!-- Load your controller's javascript here. -->
 	<script src="/js/main.js"></script>
+
+	<table>
+		<tr>
+			<td>
+		      <div class="header">
+		        Alert
+		      </div>
+		      <div id="joystick-wrapper" class="control-wrapper">
+		        <div id="joystick-socket" class="circle-socket">
+		          <div id="joystick-knob" class="hammerjs-element"></div>
+		        </div>
+		      </div>
+			</td>
+			<td>
+		      <div id="info-panel">
+		        <div id="score">Score:</div>
+		        <div id="time">Time Left:</div>
+		      </div>
+			</td>
+			<td>
+			<canvas id="example" width="200" height="60"></canvas>
+
+		      <div id="jump-button">
+		      </div>
+		      <div id="attack-button">
+		      </div>
+			</td>
+		</tr>
+	</table>
+
 </body>
 </html>
